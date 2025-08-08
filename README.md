@@ -7,8 +7,10 @@ Akses versi live: [https://dara.gusriyonaldi.com](https://dara.gusriyonaldi.com)
 
 ## 🖼️ Preview
 
-![Preview](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLMD5h32h4DOtMaopCT0TuIu4tv6TUsG3WVtN5HcoR0-OK4eXP8KUcOThIpsQS8QMMWxh8b_IMQ_9SuO_Y22okCycBn6WNlnvHObiN3I2fY7qsY3Zvyx8UgqfP-3B23ZCJFGC4IKh6hlApPMNS5IeE2GvNrzIgw13NNILqm235zTIHo-DU18pf8omOj2E/s2532/dara.gusriyonaldi.com_%28iPhone%2012%20Pro%29.png)  
-> Tampilan halaman utama undangan Dara & Gusri
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLMD5h32h4DOtMaopCT0TuIu4tv6TUsG3WVtN5HcoR0-OK4eXP8KUcOThIpsQS8QMMWxh8b_IMQ_9SuO_Y22okCycBn6WNlnvHObiN3I2fY7qsY3Zvyx8UgqfP-3B23ZCJFGC4IKh6hlApPMNS5IeE2GvNrzIgw13NNILqm235zTIHo-DU18pf8omOj2E/s2532/dara.gusriyonaldi.com_%28iPhone%2012%20Pro%29.png" alt="Preview Undangan Dara & Gusri" width="300"/>
+
+<p><em>Tampilan halaman utama undangan Dara & Gusri</em></p>
+
 
 ---
 
