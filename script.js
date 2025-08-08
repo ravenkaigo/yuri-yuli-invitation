@@ -82,6 +82,8 @@ const daftarTamu = {
   "siska": "Siska & Partner",
   "kak-resti": "Kak Resti & Partner",
   "rohana": "Rohana & Partner",
+  "mami": "Mami/ Bunda & Keluarga",
+  "teman-kosbima":"Teman Kos Bima",
   "agres": "Agres & Partner"
   //tambah tamu disini
 };
