@@ -1063,78 +1063,422 @@ a {
 }
 
 
-/* FORM UCAPAN */
-/* Container form */
-.form-ucapan {
-  max-width: 500px;
-  margin: 20px auto;
+/* ===== Form Ucapan / Kehadiran ===== */
+#nama {
+  font-weight: 700;
+  /* bold */
+  color: #333;
+  /* biar jelas terbaca */
+}
+
+/* ===== Form: struktur & label ===== */
+#ucapan-form {
+  max-width: 560px;
+  margin: 24px auto;
   padding: 20px;
-  background: #fff8f7;
-  border: 1px solid #e0c9c9;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff9f6;
+  border: 1px solid #e9e2d5;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+  display: grid;
+  gap: 16px;
 }
 
-/* Input dan textarea */
-.form-ucapan input,
-.form-ucapan textarea {
+#ucapan-form .form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.form-label-ux {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #5a5245;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-label-ux i {
+  color: #996E6D;
+}
+
+.form-label-ux .req {
+  color: #b74a4a;
+  margin-left: 4px;
+}
+
+.form-label-ux .opt {
+  color: #8f8576;
+  font-weight: 600;
+}
+
+#ucapan-form input,
+#ucapan-form select,
+#ucapan-form textarea {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #d6c9bd;
+  border-radius: 10px;
+  font-size: .95rem;
   font-family: inherit;
+  background: #fff;
+  color: #333;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
 }
 
-/* Tombol kirim */
-.form-ucapan button {
-  width: 100%;
-  background-color: #996E6D;
-  color: white;
-  font-weight: bold;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
+#ucapan-form textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+#ucapan-form input:focus,
+#ucapan-form textarea:focus {
+  border-color: #996E6D;
+  box-shadow: 0 0 0 2px rgba(153, 110, 109, .18);
+}
+
+/* hint kecil */
+#ucapan-form .hint {
+  font-size: .8rem;
+  color: #8f8576;
+  margin-top: 4px;
+}
+
+/* ===== Pills Kehadiran ===== */
+.kh-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
   cursor: pointer;
+  border: 1px solid #e9e2d5;
+  background: #fff;
+  color: #5a5245;
+  font-weight: 700;
+  transition: all .15s ease;
 }
 
-.form-ucapan button:hover {
-  background-color: #7f5b5a;
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+}
+
+.pill--ghost {
+  background: #996E6D;
+  color: #fff;
+  border-color: #996E6D;
+}
+
+.pill--ghost:hover {
+  background: #825c5b;
+}
+
+/* radio checked -> pill aktif dengan warna berbeda */
+#kh-hadir:checked+label.pill {
+  background: #e8f7ed;
+  color: #1f7a3a;
+  border-color: #cfead8;
+}
+
+#kh-belum:checked+label.pill {
+  background: #fff6e5;
+  color: #9a6a00;
+  border-color: #fde6ba;
+}
+
+#kh-tidak:checked+label.pill {
+  background: #fdeaea;
+  color: #9a1e1e;
+  border-color: #f6c9c9;
+}
+
+/* ===== Stepper Jumlah ===== */
+.kh-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px 0;
+  background: #fff;
+  border: 1px solid #e9e2d5;
+  border-radius: 999px;
+  padding: 6px 14px;
+  width: max-content;
+  margin-left: 0;
+  /* biar ikut rata kiri dengan label; pakai auto kalau mau center */
+}
+
+.kh-stepper .stepper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d6c9bd;
+  background: #fff9f6;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  padding: 0;
+}
+
+.kh-stepper .stepper:hover {
+  background: #f6ebe4;
+}
+
+#kh-jumlah-view {
+  min-width: 32px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #5a5245;
+}
+
+/* ===== Submit button (tap target ≥44px) ===== */
+.btn-submit {
+  background: #996E6D;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+
+.btn-submit:hover {
+  background: #825c5b;
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* Dark section: tetap terang (biar konsisten tema) */
+.section-dark #ucapan-form {
+  background: #fff9f6;
+  border-color: #e9e2d5;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .20);
+}
+
+.section-dark .form-label-ux {
+  color: #5a5245;
+}
+
+.section-dark .pill {
+  background: #fff;
+  border-color: #e9e2d5;
+  color: #5a5245;
+}
+
+.section-dark .pill--ghost {
+  background: #996E6D;
+  color: #fff;
+}
+
+.section-dark .kh-stepper {
+  background: #fff;
+  border-color: #e9e2d5;
 }
 
 /* Daftar ucapan */
 .daftar-ucapan {
-  max-width: 500px;
-  margin: 20px auto;
+  max-width: 560px;
+  margin: 20px auto 32px;
+  display: grid;
+  gap: 12px;
 }
 
 .ucapan-item {
-  background: #fafafa;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  margin-bottom: 10px;
+  position: relative;
+  border: 1px solid #e9e2d5;
+  /* beige terang */
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
+.ucapan-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .10);
+}
+
+/* ====== DARK SECTION OVERRIDES ====== */
+.section-dark .daftar-ucapan {
+  gap: 14px;
+}
+
+.section-dark .ucapan-item {
+  background: #763325;
+  /* kartu gelap */
+  border-color: rgba(255, 255, 255, .12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .30);
+}
+
+/* teks default di kartu (light) */
 .ucapan-item b {
   color: #996E6D;
 }
 
 .ucapan-item p {
   margin: 8px 0 0 0;
-  line-height: 1.4;
+  line-height: 1.5;
   color: #333;
 }
 
 .ucapan-item small {
-  font-size: 0.8rem;
-  /* lebih kecil */
+  font-size: .8rem;
   color: #888;
-  /* abu-abu netral */
   font-weight: normal;
-  /* tidak tebal */
   margin-left: 8px;
-  /* jarak dari nama */
+}
+
+/* teks default di kartu (dark) */
+.section-dark .ucapan-item b {
+  color: #fff;
+}
+
+.section-dark .ucapan-item p {
+  color: #f9f9f9;
+}
+
+.section-dark .ucapan-item small {
+  color: rgba(255, 255, 255, .65);
+}
+
+/* Head: nama & waktu */
+.ucapan-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.ucapan-head b {
+  font-weight: 700;
+  font-size: .98rem;
+}
+
+.ucapan-head small {
+  font-size: .8rem;
+  white-space: nowrap;
+  opacity: .9;
+}
+
+/* Body: isi pesan */
+.ucapan-body {
+  font-size: .95rem;
+  line-height: 1.55;
+  margin: 6px 0 10px;
+}
+
+/* Foot: badge status + jumlah orang */
+.ucapan-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Badge (inspirasi Bulma .tag) */
+.ucapan-foot .tag {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: .35rem .65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+}
+
+/* ====== BADGE – LIGHT MODE ====== */
+.tag--hadir {
+  background: #e8f7ed;
+  color: #1f7a3a;
+  border-color: #cfead8;
+}
+
+.tag--belum {
+  background: #fff6e5;
+  color: #9a6a00;
+  border-color: #fde6ba;
+}
+
+.tag--tidak {
+  background: #fdeaea;
+  color: #9a1e1e;
+  border-color: #f6c9c9;
+}
+
+.tag--jumlah {
+  background: #e8f1fb;
+  color: #1c4b93;
+  border-color: #cfe0f7;
+}
+
+/* ====== BADGE – DARK MODE (kontras lebih kuat) ====== */
+.section-dark .tag--hadir {
+  background: #1f7a3a;
+  color: #e8f7ed;
+  border-color: transparent;
+}
+
+.section-dark .tag--belum {
+  background: #9a6a00;
+  color: #fff6e5;
+  border-color: transparent;
+}
+
+.section-dark .tag--tidak {
+  background: #9a1e1e;
+  color: #fdeaea;
+  border-color: transparent;
+}
+
+.section-dark .tag--jumlah {
+  background: #1c4b93;
+  color: #e8f1fb;
+  border-color: transparent;
+}
+
+/* Garis pemisah halus antar kartu pada mobile */
+@media (max-width:480px) {
+  .ucapan-item {
+    padding: 12px;
+  }
+}
+
+/* Placeholder saat belum ada ucapan */
+#ucapan-placeholder {
+  background: repeating-linear-gradient(45deg, #fafafa, #fafafa 10px, #f4f4f4 10px, #f4f4f4 20px);
+  border: 1px dashed #e0c9c9;
+  text-align: center;
+}
+
+.section-dark #ucapan-placeholder {
+  background: repeating-linear-gradient(45deg, #2f2f3e, #2f2f3e 10px, #343447 10px, #343447 20px);
+  border-color: rgba(255, 255, 255, .25);
+}
+
+/* Ikon di dalam tag */
+.tag i {
+  font-size: 1rem;
+  line-height: 0;
 }
 
 .gift-box {
@@ -1256,4 +1600,86 @@ a {
   background-color: #7f5b5a;
   /* putih untuk panel aktif */
   border-color: #ddd;
+}
+
+
+.ucapan-text.is-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /* ubah ke 4 jika mau lebih pendek */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ucapan-more {
+  margin-top: 6px;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-weight: 700;
+  color: #996E6D;
+  cursor: pointer;
+}
+
+.section-dark .ucapan-more {
+  color: #fff;
+  opacity: .9;
+}
+
+/* biar tinggi clamp akurat */
+
+/* === Ucapan head: nama & waktu selaras === */
+.ucapan-head{
+  display: flex;
+  align-items: center;              /* waktu & nama sejajar vertikal */
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Nama bisa panjang → ellipsis, biar waktu tetap terlihat */
+.ucapan-head b{
+  flex: 1 1 auto;
+  min-width: 0;                     /* wajib untuk ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Waktu konsisten, angka rata (tabular) dan tak terpotong */
+.ucapan-time{
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: .82rem;
+  color: #888;
+  font-variant-numeric: tabular-nums;     /* angka sejajar */
+  letter-spacing: .2px;
+  opacity: .9;
+}
+
+/* Dark section: kontras waktu */
+.section-dark .ucapan-time{
+  color: rgba(255,255,255,.75);
+}
+
+/* Desktop/tablet: tambahkan bullet pemisah di depan waktu */
+@media (min-width: 481px){
+  .ucapan-head b + .ucapan-time::before{
+    content: "•";
+    margin: 0 6px 0 10px;
+    opacity: .5;
+  }
+}
+
+/* Mobile: waktu turun ke baris baru di bawah nama */
+@media (max-width: 480px){
+  .ucapan-head{
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0px 8px;
+  }
+  .ucapan-time{
+    order: 2;                /* pastikan muncul setelah nama */
+    width: 100%;
+    opacity: .85;
+  }
 }

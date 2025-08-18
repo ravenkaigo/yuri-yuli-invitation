@@ -10,11 +10,14 @@
   <!--=============== REMIXICONS ===============-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
   <!-- Preload Fonts -->
-  <link rel="preload" href="https://fonts.gstatic.com/s/raleway/v36/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrEVJz9d.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://fonts.gstatic.com/s/raleway/v36/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrEVJz9d.woff2"
+    as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
 
   <!-- Load Fonts CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400&display=swap"
+    rel="stylesheet">
 
   <title>The Wedding of Dara & Aldi</title>
 
@@ -411,7 +414,7 @@
 
 <body class="noscroll">
   <!-- Preloader with Invitation Card -->
- 
+
   <div class="preloader-wrapper">
     <div class="preloader" id="invitation-card">
       <div class="preloader-content">
@@ -745,10 +748,7 @@
           </p>
         </div>
         <div style="display: flex; justify-content: center; align-items: center;">
-           <img src="image/flapping_bird.webp" 
-       style="width: 297px; height: 222px;" 
-       alt="Animasi WebP" 
-       loading="lazy" />
+          <img src="image/flapping_bird.webp" style="width: 297px; height: 222px;" alt="Animasi WebP" loading="lazy" />
         </div>
 
 
@@ -775,13 +775,75 @@
           </div>
         </div>
         <!-- Form Ucapan -->
-        <div class="form-ucapan">
-          <input id="nama" placeholder="Nama kamu...">
-          <textarea id="pesan" placeholder="Tulis ucapan..."></textarea>
-          <button onclick="kirimUcapan()">Kirim Ucapan</button>
-        </div>
+        <!-- Form Ucapan & (opsional) Kehadiran -->
+        <form id="ucapan-form" onsubmit="kirimUcapan(); return false;">
+          <!-- Nama (required) -->
+          <div class="form-group">
+            <label for="nama" class="form-label-ux">
+              Nama <span class="req">*</span>
+            </label>
+            <input type="text" id="nama" placeholder="Tulis nama Anda" required />
+          </div>
+
+          <!-- Pesan (required) -->
+          <div class="form-group">
+            <label for="pesan" class="form-label-ux">
+              Ucapan / Doa <span class="req">*</span>
+            </label>
+            <textarea id="pesan" rows="4" placeholder="Tulis ucapan atau doa terbaik untuk mempelai"
+              required></textarea>
+          </div>
+          <!-- HONEYPOT: harus kosong, bot biasanya ngisi -->
+          <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+            <label for="hp">Website</label>
+            <input id="hp" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <!-- Kehadiran (opsional) -->
+          <div class="form-group">
+            <div class="form-label-ux">
+              <i class="ri-calendar-check-line"></i>
+              Kehadiran <span class="opt">(opsional)</span>
+            </div>
+
+            <div class="kh-group" role="radiogroup" aria-label="Kehadiran (opsional)">
+              <input type="radio" name="kehadiran" id="kh-hadir" value="hadir" hidden>
+              <label for="kh-hadir" class="pill">Hadir</label>
+
+              <input type="radio" name="kehadiran" id="kh-belum" value="belum_pasti" hidden>
+              <label for="kh-belum" class="pill">Belum Pasti</label>
+
+              <input type="radio" name="kehadiran" id="kh-tidak" value="tidak_hadir" hidden>
+              <label for="kh-tidak" class="pill">Tidak Hadir</label>
+
+              <button type="button" id="kh-clear" class="pill pill--ghost" title="Kosongkan pilihan">
+                <i class="ri-close-line"></i> Kosongkan
+              </button>
+            </div>
+          </div>
+
+          <!-- Jumlah Orang (opsional) -->
+          <div class="form-group">
+            <div class="form-label-ux">
+              <i class="ri-user-2-line"></i>
+              Jumlah Orang <span class="opt">(opsional)</span>
+            </div>
+
+            <div class="kh-stepper" aria-label="Jumlah Orang (opsional)">
+              <button type="button" class="stepper" data-step="-1" aria-label="Kurangi">−</button>
+              <output id="kh-jumlah-view" for="jumlah">—</output> <!-- pakai strip/en-dash sebagai placeholder -->
+              <button type="button" class="stepper" data-step="1" aria-label="Tambah">+</button>
+              <!-- hidden untuk disimpan -->
+              <input type="hidden" id="jumlah" value="">
+            </div>
+            <div class="hint">Biarkan kosong jika belum bisa memastikan jumlah tamu.</div>
+          </div>
+
+          <!-- Tombol submit -->
+          <button id="btn-kirim" type="submit" class="btn-submit">Kirim Ucapan</button>
+        </form>
         <!-- Daftar Ucapan -->
-        <div id="list-ucapan" class="daftar-ucapan"></div>
+        <div id="list-ucapan" class="daftar-ucapan">
+        </div>
       </div>
       <div data-aos="fade-zoom-in" data-aos-anchor-placement="top-center" data-aos-easing="ease-in-back"
         data-aos-delay="200" data-aos-offset="0">
