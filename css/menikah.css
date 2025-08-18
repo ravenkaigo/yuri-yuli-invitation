@@ -1307,7 +1307,7 @@ a {
   /* beige terang */
   background: #ffffff;
   border-radius: 14px;
-  padding: 12px 14px;
+  padding: 10px 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
   transition: transform .15s ease, box-shadow .15s ease;
 }
@@ -1459,7 +1459,7 @@ a {
 /* Garis pemisah halus antar kartu pada mobile */
 @media (max-width:480px) {
   .ucapan-item {
-    padding: 12px;
+    padding: 10px;
   }
 }
 
@@ -1605,10 +1605,15 @@ a {
 
 .ucapan-text.is-clamp {
   display: -webkit-box;
-  -webkit-line-clamp: 5;
-  /* ubah ke 4 jika mau lebih pendek */
+  /* fallback lama */
   -webkit-box-orient: vertical;
+  /* fallback lama */
   overflow: hidden;
+
+  -webkit-line-clamp: 5;
+  /* vendor prefix (lama) */
+  line-clamp: 5;
+  /* standar baru */
 }
 
 .ucapan-more {
@@ -1629,41 +1634,44 @@ a {
 /* biar tinggi clamp akurat */
 
 /* === Ucapan head: nama & waktu selaras === */
-.ucapan-head{
+.ucapan-head {
   display: flex;
-  align-items: center;              /* waktu & nama sejajar vertikal */
+  align-items: center;
+  /* waktu & nama sejajar vertikal */
   justify-content: space-between;
   gap: 8px;
 }
 
 /* Nama bisa panjang → ellipsis, biar waktu tetap terlihat */
-.ucapan-head b{
+.ucapan-head b {
   flex: 1 1 auto;
-  min-width: 0;                     /* wajib untuk ellipsis */
+  min-width: 0;
+  /* wajib untuk ellipsis */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 /* Waktu konsisten, angka rata (tabular) dan tak terpotong */
-.ucapan-time{
+.ucapan-time {
   flex: 0 0 auto;
   white-space: nowrap;
   font-size: .82rem;
   color: #888;
-  font-variant-numeric: tabular-nums;     /* angka sejajar */
+  font-variant-numeric: tabular-nums;
+  /* angka sejajar */
   letter-spacing: .2px;
   opacity: .9;
 }
 
 /* Dark section: kontras waktu */
-.section-dark .ucapan-time{
-  color: rgba(255,255,255,.75);
+.section-dark .ucapan-time {
+  color: rgba(255, 255, 255, .75);
 }
 
 /* Desktop/tablet: tambahkan bullet pemisah di depan waktu */
-@media (min-width: 481px){
-  .ucapan-head b + .ucapan-time::before{
+@media (min-width: 481px) {
+  .ucapan-head b+.ucapan-time::before {
     content: "•";
     margin: 0 6px 0 10px;
     opacity: .5;
@@ -1671,14 +1679,16 @@ a {
 }
 
 /* Mobile: waktu turun ke baris baru di bawah nama */
-@media (max-width: 480px){
-  .ucapan-head{
+@media (max-width: 480px) {
+  .ucapan-head {
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 0px 8px;
   }
-  .ucapan-time{
-    order: 2;                /* pastikan muncul setelah nama */
+
+  .ucapan-time {
+    order: 2;
+    /* pastikan muncul setelah nama */
     width: 100%;
     opacity: .85;
   }
