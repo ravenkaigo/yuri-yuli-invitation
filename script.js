@@ -216,8 +216,19 @@ const daftarTamu = {
   "zulpiter": "Zulpiter & Keluarga",
   "jhon-peri": "Jhon Peri & Keluarga",
   "toni": "Toni & Keluarga",
-  "devi-suami": "Devi & Suami"
-
+  "devi-suami": "Devi & Suami",
+  "ima": "Ima & Partner",
+  "ima-andista": "Ima Andista & Partner",
+  "suci": "Suci & Keluarga",
+  "mak-inal": "Mak Inal & Keluarga",
+  "mak-dodi": "Mak Dodi & Keluarga",
+  "kak-gesha": "Kak Gesha & Keluarga",
+  "barry": "Barry & Partner",
+  "mak-wara": "Mak Wara & Keluarga",
+  "kak-ordah-keluarga": "Kak Ordah & Keluarga",
+  "ante-linda": "Ante Linda & Keluarga",
+  "bg-willy": "Bg Willy & Partner",
+  "bg-jefri": "Bg Jefri & Partner",
   //tambah tamu disini
 };
 
