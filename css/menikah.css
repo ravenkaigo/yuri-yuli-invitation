@@ -1693,3 +1693,33 @@ a {
     opacity: .85;
   }
 }
+
+/* pagination */
+
+.ucapan-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.ucapan-pager button {
+  background: #c19a6b;   /* warna tema */
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ucapan-pager button:hover:enabled {
+  background: #a67c52;   /* warna hover */
+}
+
+.ucapan-pager button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
