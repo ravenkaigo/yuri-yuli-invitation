@@ -239,7 +239,10 @@ const daftarTamu = {
   "tri-sumantri-keluarga": "Tri Sumantri & Keluarga",
   "mujiyono-keluarga": "Mujiyono & Keluarga",
   "rita-indah-keluarga": "Rita Indah & Keluarga",
-  "surat-keluarga": "Surat & Keluarga"
+  "surat-keluarga": "Surat & Keluarga",
+  "nando": "Nakan Nando & Keluarga",
+  "ricko": "Nakan Ricko & Keluarga",
+  "dede": "Nakan Dede & Keluarga",
   //tambah tamu disini
 };
 
