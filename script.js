@@ -229,6 +229,17 @@ const daftarTamu = {
   "ante-linda": "Ante Linda & Keluarga",
   "bg-willy": "Bg Willy & Partner",
   "bg-jefri": "Bg Jefri & Partner",
+  "hajrul-aswadi-keluarga": "Hajrul Aswadi & Keluarga",
+  "yarman-zuhurdi-keluarga": "Yarman Zuhurdi & Keluarga",
+  "winda-rizanti": "Winda Rizanti",
+  "surya-ainun-susanti": "Surya Ainun Susanti",
+  "hajrun-keluarga": "Hajrun & Keluarga",
+  "pandra-keluarga": "Pandra & Keluarga",
+  "sagimin-keluarga": "Sagimin & Keluarga",
+  "tri-sumantri-keluarga": "Tri Sumantri & Keluarga",
+  "mujiyono-keluarga": "Mujiyono & Keluarga",
+  "rita-indah-keluarga": "Rita Indah & Keluarga",
+  "surat-keluarga": "Surat & Keluarga"
   //tambah tamu disini
 };
 
