@@ -250,6 +250,12 @@ const daftarTamu = {
   "ricko": "Nakan Ricko & Keluarga",
   "dede": "Nakan Dede & Keluarga",
   "dwima": "Dwima & Keluarga",
+  "rani-keluarga": "Rani & Keluarga",
+  "astri-partner": "Astriana Rahmah & Partner",
+  "ulya-partner": "Ulya Afifah & Partner",
+  "khanif-keluarga": "Khanif Ikhsanudin & Keluarga",
+  "intan-kumala-saridri": "Intan Kumala Sari & Partner",
+  "nanik-suami": "Wigati Nanik Nurima & Suami",
   //tambah tamu disini
 };
 
