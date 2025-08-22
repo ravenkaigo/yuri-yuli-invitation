@@ -257,6 +257,8 @@ const daftarTamu = {
   "intan-kumala-saridri"  : "Intan Kumala Sari & Partner",
   "nanik-suami": "Wigati Nanik Nurima & Suami",
   "pak-andri": "Pak Andri & Keluarga",
+  "yth-bupati-siak": "Yth. Dr. Afni Z, M.Si",
+  "yth-wakil-bupati-siak": "Yth. Syamsurizal, S.Ag, M.Si",
   //tambah tamu disini
 };
 
