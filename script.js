@@ -254,7 +254,7 @@ const daftarTamu = {
   "astri-partner": "Astriana Rahmah & Partner",
   "ulya-partner": "Ulya Afifah & Partner",
   "khanif-keluarga": "Khanif Ikhsanudin & Keluarga",
-  "intan-kumala-saridri"  : "Intan Kumala Sari & Partner",
+  "intan-kumala-sari"  : "Intan Kumala Sari & Partner",
   "nanik-suami": "Wigati Nanik Nurima & Suami",
   "pak-andri": "Pak Andri & Keluarga",
   "yth-bupati-siak": "Yth. Dr. Afni Z, M.Si",
