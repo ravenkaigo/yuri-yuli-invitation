@@ -254,8 +254,9 @@ const daftarTamu = {
   "astri-partner": "Astriana Rahmah & Partner",
   "ulya-partner": "Ulya Afifah & Partner",
   "khanif-keluarga": "Khanif Ikhsanudin & Keluarga",
-  "intan-kumala-saridri": "Intan Kumala Sari & Partner",
+  "intan-kumala-saridri"  : "Intan Kumala Sari & Partner",
   "nanik-suami": "Wigati Nanik Nurima & Suami",
+  "pak-andri": "Pak Andri & Keluarga",
   //tambah tamu disini
 };
 
