@@ -259,6 +259,7 @@ const daftarTamu = {
   "pak-andri": "Pak Andri & Keluarga",
   "yth-bupati-siak": "Yth. Dr. Afni Z, M.Si",
   "yth-wakil-bupati-siak": "Yth. Syamsurizal, S.Ag, M.Si",
+  "abdussalam": "Abdussalam Al Masykur & Keluarga",
   //tambah tamu disini
 };
 
