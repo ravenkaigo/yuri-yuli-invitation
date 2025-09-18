@@ -556,17 +556,27 @@
             var day = now.getDate();
             var month = now.getMonth() + 1;
             var year = now.getFullYear() + 1;
-            // Mengatur tanggal dan waktu untuk countdown
-            var harih = '08/24/2025 09:00:00'; // Tanggal yang ingin dihitung mundur
+
+            var harih = '08/24/2025 09:00:00'; // Tanggal yang ingin dihitung mundur (MM/DD/YYYY HH:MM:SS)
+
             $('#hitungmundur').countdown({
-              date: harih, // Menggunakan format MM/DD/YYYY HH:MM:SS
-              offset: +7, // Waktu offset (WIB)
-              day: 'Hari', // Label untuk satu hari
-              days: 'Hari' // Label untuk lebih dari satu hari
+              date: harih,
+              offset: +7,
+              day: 'Hari',
+              days: 'Hari'
             }, function () {
-              alert('Acara Dilaksanakan!');
+              // ⬇️ tampilkan toast + ubah tampilan countdown
+              showToast('Acara terlaksana!✨', { duration: 4000, icon: '💍' });
+
+              // // (opsional) ganti countdown jadi banner info (pakai Bulma yang sudah terpasang)
+              // $('#hitungmundur').replaceWith(
+              //   '<div class="notification is-success is-light" style="max-width:520px;margin:0 auto">' +
+              //   '<strong>Acara Telah berlangsung</strong>💐' +
+              //   '</div>'
+              // );
             });
           </script>
+
         </div>
         <!-- End Countdown -->
 
@@ -1081,8 +1091,35 @@
   font-size: 14px;
   display: none;
   z-index: 9999;
+  text-align: center;        /* ⬅️ isi teks rata tengah */
+  min-width: 200px;          /* opsional biar nggak terlalu sempit */
 "></div>
 
+  <script>
+    // Toast minimalis (tanpa library tambahan)
+    function showToast(text, { duration = 3000, icon = '🔔' } = {}) {
+      const toast = document.getElementById('toast');
+      if (!toast) return;
+
+      toast.innerHTML = `<span style="font-size:18px;margin-right:8px">${icon}</span>${text}`;
+      toast.style.display = 'block';
+      toast.style.opacity = '0';
+      toast.style.transform = 'translate(-50%, -60%)';
+      toast.style.transition = 'opacity .3s ease, transform .3s ease';
+
+      requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translate(-50%, -50%)';
+      });
+
+      // auto-hide
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%, -40%)';
+        setTimeout(() => { toast.style.display = 'none'; }, 300);
+      }, duration);
+    }
+  </script>
 </body>
 
 </html>
