@@ -13,6 +13,16 @@
 //   } else {
 //     document.body.innerHTML = "<h1>Maaf, Halaman tidak ditemukan.</h1>";
 //   }
+
+// ==== NAMESPACE UNDANGAN (BIAR DATA TIDAK CAMPUR) ====
+// bisa ganti manual, atau ambil dari URL ?inv=...
+const INVITE_ID = new URLSearchParams(location.search).get('inv') || 'yulia-yuri-2025';
+const BASE = `invites/${INVITE_ID}`;
+const path = (p) => `${BASE}/${p}`;
+// contoh path('ucapan') => "invites/yulia-yuri-2025/ucapan"
+
+
+
 function decodeHtmlEntities(str) {
   if (!str) return "";
   const txt = document.createElement("textarea");
@@ -21,7 +31,7 @@ function decodeHtmlEntities(str) {
 }
 
 const daftarTamu = {
-  
+
   "mutual-ig": "Instagram Mutuals",
   //tambah tamu disini
 };
@@ -96,7 +106,7 @@ function kirimUcapan() {
   const safeNama = escapeHTML(nama);
   const safePesan = escapeHTML(pesan);
 
-  db.ref('ucapan').push({
+  db.ref(path('ucapan')).push({
     nama: safeNama,
     pesan: safePesan,
     waktu: now,
@@ -122,7 +132,7 @@ function kirimUcapan() {
       }
     })
     .catch(err => {
-      
+
       alert('Gagal mengirim. Coba lagi ya.');
     })
     .finally(() => {
@@ -365,9 +375,10 @@ if (typeof window.kirimUcapan !== 'function') {
     };
 
     const root = db.ref();
-    const key = db.ref('ucapan').push().key;
+    const key = db.ref(path('ucapan')).push().key;
     const updates = {};
-    updates['/ucapan/' + key] = payload;
+    updates[`/${path('ucapan')}/${key}`] = payload;
+
 
     root.update(updates)
       .then(() => {
@@ -384,7 +395,7 @@ if (typeof window.kirimUcapan !== 'function') {
         if (typeof loadLatestPage === 'function') loadLatestPage();
       })
       .catch(e => {
-        
+
         alert('Gagal mengirim. Coba lagi ya.');
       })
       .finally(() => {
@@ -423,7 +434,7 @@ function setPagerUIClient() {
   if (pageInfo) pageInfo.textContent = `Hal ${page}`;
   if (btnNewer) btnNewer.disabled = page <= 1;
   if (btnOlder) btnOlder.disabled = page >= TOTAL_PAGES;
-  
+
 }
 
 function pageSlice(p) {
@@ -448,7 +459,7 @@ function loadNewerPage_client() {
 
 // 🔽🔽 FLATTEN: ambil semua anak level-1 dan juga cucunya (bucket)
 async function loadAllUcapanFlatten() {
-  const snap = await db.ref('ucapan').once('value');
+  const snap = await db.ref(path('ucapan')).once('value');
   const flat = [];
 
   snap.forEach(l1 => {
@@ -561,9 +572,9 @@ document.querySelectorAll('.tabs ul li').forEach(tab => {
   function get(el) { return document.getElementById(el); }
 
   // deteksi fungsi pagination yang ada di file kamu
-  const goOlder = pick(['loadOlderPage_client','loadOlderPage_flat','loadOlderPage','loadOlderPage_byTime','loadOlderPageKey']);
-  const goNewer = pick(['loadNewerPage_client','loadNewerPage_flat','loadNewerPage','loadNewerPage_byTime','loadNewerPageKey']);
-  const goLatest = pick(['loadLatestPage','loadLatestPage_flat','loadAllUcapanFlatten']); // untuk refresh ke halaman terbaru
+  const goOlder = pick(['loadOlderPage_client', 'loadOlderPage_flat', 'loadOlderPage', 'loadOlderPage_byTime', 'loadOlderPageKey']);
+  const goNewer = pick(['loadNewerPage_client', 'loadNewerPage_flat', 'loadNewerPage', 'loadNewerPage_byTime', 'loadNewerPageKey']);
+  const goLatest = pick(['loadLatestPage', 'loadLatestPage_flat', 'loadAllUcapanFlatten']); // untuk refresh ke halaman terbaru
 
   // ambil tombol dari HTML
   const olderBtn = get('btn-older');
@@ -601,7 +612,7 @@ document.querySelectorAll('.tabs ul li').forEach(tab => {
         // Di sini hanya sync teks halamannya.
         if (newerBtn && typeof page !== 'undefined') newerBtn.disabled = page <= 1;
       }
-    } catch(e) {
+    } catch (e) {
       // tidak apa-apa, hanya UI sync
     }
   };

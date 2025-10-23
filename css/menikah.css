@@ -60,14 +60,23 @@ body.noscroll {
 
 
 .hero {
-  background-color: #0f3d7a;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  background-attachment: fixed;
-  background-size: contain;
+  min-height: 100vh;
+  /* pastikan tinggi ada */
+  background:
+    url("../image/backgroundcatair.webp") center/cover no-repeat,
+    /* overlay cat air */
+    #0f3d7a;
+  /* warna dasar di bawahnya */
+  background-blend-mode: lighten;
+  /* campurkan transparan */
   font-family: 'Raleway', sans-serif;
+  background-attachment: scroll;
+  /* ganti dari fixed biar cross-device aman */
+  color: white;
+  /* pastikan teks tetap terbaca */
 }
+
+
 
 
 
@@ -1706,7 +1715,8 @@ a {
 }
 
 .ucapan-pager button {
-  background: #c19a6b;   /* warna tema */
+  background: #c19a6b;
+  /* warna tema */
   color: #fff;
   border: none;
   padding: 8px 14px;
@@ -1716,7 +1726,8 @@ a {
 }
 
 .ucapan-pager button:hover:enabled {
-  background: #a67c52;   /* warna hover */
+  background: #a67c52;
+  /* warna hover */
 }
 
 .ucapan-pager button:disabled {
@@ -1731,4 +1742,11 @@ a {
 
 #sponsor-aldi-dara img:hover {
   opacity: 1;
+}
+
+.my-video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  display: block;
 }

@@ -165,7 +165,7 @@
 
     .hero-blank {
 
-      background-color: #763325;
+      background-color: #1976d2;
       width: 100%;
       height: 100vh;
       display: flex;
@@ -192,11 +192,11 @@
     }
 
     .section-light {
-      background-color: #fff9ef;
+      background-color: #f2f7ff;
     }
 
     .section-dark {
-      background-color: #763325;
+      background-color: #1976d2;
       color: #fff9ef;
     }
 
@@ -209,9 +209,9 @@
     .btn-whatsapp {
       margin-top: 12px;
       padding: 10px 24px;
-      background-color: #d4a373;
-      color: #763325;
-      border: 2px solid #763325;
+      background-color: #efd06b;
+      color: #1976d2;
+      border: 2px solid #1976d2;
       border-radius: 25px;
       font-size: 14px;
 
@@ -271,7 +271,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: #763325;
+      background-color: #1976d2;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -279,13 +279,16 @@
       transition: transform 1s ease;
     }
 
+
+
     .preloader {
+      background: url("image/backgroundcatair.webp") repeat-x;
       max-width: 400px;
       height: calc(100% - 40px);
       /* Kurangi tinggi untuk menyisakan "wrapper" bawah */
       margin-bottom: 10px;
       /* Memberi ruang di bawah (wrapper terlihat) */
-      background-color: #fff9ef;
+      background-color: #f2f7ff;
       /* border-radius: 15px; */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       position: relative;
@@ -293,6 +296,8 @@
       transition: transform 1s ease;
       cursor: pointer;
       overflow: hidden;
+
+
     }
 
     .preloader-content {
@@ -303,29 +308,40 @@
       justify-content: center;
       align-items: center;
 
-      /* Gambar hanya di atas */
-      background: url("image/rebung-single.webp") repeat-x;
-      background-position: top center;
-      background-size: auto 90px;
-      /* tinggi gambar 120px, lebar auto */
+      /* ✅ 2 layer: atas & bawah */
+      background:
+        url("image/Borderyuri.webp") repeat-x top center,
+        url("image/borderbawahyri.webp") repeat-x bottom center;
 
-      animation: move-bg 30s linear infinite;
+      /* ✅ Dua nilai: [atas], [bawah] */
+      background-size:
+        400px auto,
+        /* layer atas (di-animate) */
+        400px auto;
+      /* layer bawah (tetap) */
 
       padding: 20px;
       box-sizing: border-box;
       text-align: center;
+      /* Hapus background-position lama biar tidak konflik */
     }
 
+    /* Animate hanya layer pertama (atas) */
     @keyframes move-bg {
       0% {
-        background-position: 0 0;
+        background-size: 400px auto, 400px auto;
       }
 
+      50% {
+        background-size: 420px auto, 400px auto;
+      }
+
+      /* cuma layer 1 membesar */
       100% {
-        background-position: 200px 0;
-        /* geser horizontal 200px */
+        background-size: 400px auto, 400px auto;
       }
     }
+
 
 
 
@@ -336,7 +352,7 @@
     }
 
     .preloader h3 {
-      color: #d4a373;
+      color: #efd06b;
       font-size: 36px;
     }
 
@@ -353,9 +369,9 @@
     .open-invitation {
       margin-top: 12px;
       padding: 12px 30px;
-      background-color: #d4a373;
-      color: #763325;
-      border: 2px solid #763325;
+      background-color: #efd06b;
+      color: #1976d2;
+      border: 2px solid #1976d2;
       border-radius: 25px;
       font-size: 16px;
       cursor: pointer;
@@ -437,7 +453,7 @@
             <b>Buka Undangan!</b>
           </span>
         </button>
-        <img src="image/leaf.svg" alt="Pengantin" style="width: 130px; height: 114.29px; margin-bottom: 20px;">
+        <!-- <img src="image/borderbawahyri.webp" alt="Pengantin" style="width: 130px; height: 114.29px; margin-bottom: 20px;"> -->
       </div>
     </div>
   </div>
@@ -445,7 +461,7 @@
   <!-- End Preloader-->
 
   <audio id="background-music" preload="auto" loop muted>
-    <source src="barasuaraost.mp3" type="audio/mp3"> Your browser does not support the audio element.
+    <source src="akumemilihmu.mp3" type="audio/mp3"> Your browser does not support the audio element.
   </audio>
   <a role="button" id="audio-control" class="nav__expand-link ri-volume-up-line" title="Mute / Unmute">
   </a>
@@ -510,12 +526,12 @@
       <div class="hero-body" id="home">
         <div class="space40px"></div>
         <h1 class="subtitle has-text-centered">
-          The Wedding of
+
         </h1>
         <div class="container has-text-centered ">
 
           <h2 class="title" data-aos-anchor-placement="top-center" data-aos="fade-in" data-aos-easing="easing"
-            data-aos-delay="1000">Yulia & Yuri</h2>
+            data-aos-delay="1000"></h2>
           <div class="hero-middle">
             <span class="space210px"></span>
             <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-easing="easing"
@@ -523,7 +539,8 @@
           </div>
           <span class="space210px"></span>
           <h4 class="subtitle tempatwaktu" data-aos-delay="500" data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom" data-aos-easing="easing"> <b>Akad:</b> Jumat, 28-Nov-2025</br><b>Resepsi:</b> Minggu, 30-Nov-2025 </br> <b>Perawang, Riau</b></br>
+            data-aos-anchor-placement="top-bottom" data-aos-easing="easing"> <b>Akad:</b> Jumat,
+            28-Nov-2025</br><b>Resepsi:</b> Minggu, 30-Nov-2025 </br> <b>Perawang, Riau</b></br>
           </h4>
         </div>
         <!-- Start Countdown -->
@@ -604,9 +621,9 @@
       </div>
       <p data-aos="fade-up" data-aos-easing="easing"
         style="font-family: Georgia, serif; font-size: 0.8rem; font-style: italic; color: #555; line-height: 1.6; text-align: center; max-width: 600px; margin: 0 auto;">
-        “And among His signs is that He created for you from yourselves
-        spouses that you may find tranquility in them, and He placed between you affection and mercy. Indeed, in that
-        are signs for a people who reflect.” </br>
+        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri,
+        supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang.
+        Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.” </br>
         <b>(QS. Ar-Rum: 21)</b>
       </p>
       </br>
@@ -617,12 +634,12 @@
       <span class="space40px"></span>
       <span class="space40px"></span>
       <div data-aos="fade-up" data-aos-easing="easing">
-        <img src="image/gusri.png" class="pengantin-pp" alt="gusri">
+        <img src="image/yuri.png" class="pengantin-pp" alt="yuri">
         <div class="nama-lengkap"> Yuri Pari Dinata </div>
         <p><b>Putra Pertama dari:</b><br>
           Bapak Syafarudin</p>
         <div class="ampersand">&</div>
-        <img src="image/dara.png" class="pengantin-pp" alt="dara">
+        <img src="image/yulia.png" class="pengantin-pp" alt="yulia">
         <div class="nama-lengkap"> Yulia Pertiwi </div>
         <p><b>Putri Pertama dari:</b><br>
           Bapak Khairul Koto</p>
@@ -693,9 +710,8 @@
 
           <div class="section-map" data-aos="fade-up" data-aos-easing="easing">
             <div style="border:2px solid #ccc;border-radius:12px;overflow:hidden">
-              <iframe
-                src="https://www.google.com/maps?q=Jl.+Sederhana+sebelah+Cafe+Nowwa&output=embed"
-                width="100%" height="320" style="border:0;" allowfullscreen loading="lazy">
+              <iframe src="https://www.google.com/maps?q=Jl.+Sederhana+sebelah+Cafe+Nowwa&output=embed" width="100%"
+                height="320" style="border:0;" allowfullscreen loading="lazy">
               </iframe>
             </div>
 
@@ -703,8 +719,8 @@
           </div>
           <div class="space40px"></div>
           <div class="has-text-centered" data-aos="fade-up" data-aos-easing="easing">
-            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Sederhana+sebelah+Cafe+Nowwa" class="button btn-cta" target="_blank"
-              data-aos="zoom-in">
+            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Sederhana+sebelah+Cafe+Nowwa"
+              class="button btn-cta" target="_blank" data-aos="zoom-in">
               <i class="fas fa-directions"></i> &nbsp;&nbsp;Lihat Maps </a>
           </div>
 
@@ -731,7 +747,12 @@
               <img src="image/moment3.jpg" alt="futu 3" loading="lazy">
             </div>
           </div>
-          <br>
+          <br><br>
+          <video controls autoplay muted loop playsinline class="my-video">
+            <source src="image/yurividio.mp4" type="video/mp4">
+            Browser kamu tidak mendukung video HTML5.
+          </video>
+
           <p data-aos="fade-up" data-aos-easing="easing" style="
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
@@ -742,19 +763,11 @@
   margin: 0 auto;
   letter-spacing: 0.3px;
     ">
-            Kisah kami berawal dari Instagram. Sama-sama suka menggambar, dan tanpa disadari ternyata kami satu
-            kampus.
-            Awalnya hanya sebatas saling follow dan sesekali menyapa lewat story.
+    <br><br>
+            Kita dipertemukan bukan untuk sekadar berjalan berdampingan, tapi untuk saling menjadi rumah di setiap
+            perjalanan
             <br><br>
-            Waktu berlalu, menjelang wisuda, kami mulai lebih sering berbagi cerita. Dari saling komentar di story,
-            datang ke wisuda masing-masing, sampai ngobrol soal hal-hal random yang ternyata seru buat dibahas.
-            <br><br>
-            Dari sana, pertemanan kami tumbuh dengan alami. Obrolan yang awalnya sederhana, lama-lama jadi sesuatu
-            yang terasa nyaman dan
-            menyenangkan.
-            <br><br>
-            Sampai akhirnya, di tengah semua cerita yang kami bagi, kami memutuskan untuk melanjutkan hubungan ini ke
-            jenjang pernikahan, dengan niat membangun rumah tangga yang saling menguatkan dan diridhai Allah SWT.
+
           </p>
         </div>
         <div style="display: flex; justify-content: center; align-items: center;">
@@ -767,19 +780,9 @@
 
 
     <!-- End Tentang Aldi dan Dara -->
-    
-    <!-- Hadiah Digital / Rekening -->
-    <section class="section-light" id="rekening">
-      <div class="container">
-        <div class="column is-12 has-text-centered regular-section">
-          <h1 class="title section-title">Hadiah Digital</h1>
-          <p class="is-larger" style="max-width:520px;margin:0 auto">
-            Bila berkenan mengirimkan tanda kasih:<br><b>Bank Sinarmas: 0055413207 (Yuri Pari Dinata) • DANA: 082287501599</b>
-          </p>
-        </div>
-      </div>
-    </section>
-    
+
+
+
     <!-- Begin RSVP Content -->
     <section class="hero section-dark contact" id="rsvp">
       <div class="container">
@@ -885,7 +888,7 @@
 
 
     <!-- Ilustrasi -->
-    <section class="section-dark regular-section is-fullheight" id="tentang-aldi-dara"
+    <section class="section-light regular-section is-fullheight" id="tentang-aldi-dara"
       style="padding: 0; margin: 0; display: flex; justify-content: center; align-items: center; text-align: center;">
       <img src="image/photostoryend1.webp" data-aos-anchor-placement="center-bottom" data-aos-delay="200"
         data-aos="fade-in" data-aos-easing="ease-in-out" alt="futu1" loading="lazy"
@@ -898,18 +901,18 @@
 
         <div class="tabs is-centered is-boxed">
           <ul>
-            <li data-tab="bca"><a>BCA</a></li>
-            <li class="is-active" data-tab="mandiri"><a>Mandiri</a></li>
+            <li data-tab="bca"><a>Sinarmas</a></li>
+            <li class="is-active" data-tab="mandiri"><a>Dana</a></li>
           </ul>
         </div>
 
         <div id="tab-content">
           <div class="tab-pane" id="bca">
             <div class="box">
-              <img src="image/Bank_Central_Asia.svg" alt="Logo BCA" style="height: 25px; margin-bottom: 0.5rem;"
+              <img src="image/Sinarmas_logo.webp" alt="Logo Sinarmas" style="height: 25px; margin-bottom: 0.5rem;"
                 loading="lazy" />
-              <p class="is-size-5 mb-2"><strong><span id="bca-number">8455530888</span></strong><br><small>(Gusri
-                  Yonaldi)</small></p><br>
+              <p class="is-size-5 mb-2"><strong><span id="bca-number">0055413207 </span></strong><br><small>(Yuri Pari
+                  Dinata)</small></p><br>
               <button class="button is-small is-light" onclick="copyToClipboard('bca-number', this)">
                 <i class="ri-file-copy-line"></i> &nbsp; Salin Nomor
               </button>
@@ -918,10 +921,10 @@
 
           <div class="tab-pane is-active" id="mandiri">
             <div class="box">
-              <img src="image/Bank_Mandiri_logo.svg" alt="Logo Mandiri" style="height: 30px; margin-bottom: 0.5rem;"
+              <img src="image/Logo_dana_blue.svg.png" alt="Logo Mandiri" style="height: 30px; margin-bottom: 0.5rem;"
                 loading="lazy" />
-              <p class="is-size-5 mb-2"><strong><span id="mandiri-number">1080030061569</span></strong><br><small>(Dara
-                  Mita Lani)</small></p><br>
+              <p class="is-size-5 mb-2"><strong><span id="mandiri-number">082287501599</span></strong><br><small>(Yuri
+                  Pari Dinata)</small></p><br>
               <button class="button is-small is-light" onclick="copyToClipboard('mandiri-number', this)">
                 <i class="ri-file-copy-line"></i> &nbsp; Salin Nomor
               </button>
@@ -946,21 +949,21 @@
     style="padding: 0; margin: 0; display: flex; justify-content: center; align-items: center; text-align: center;">
     <div class="container" style="margin-bottom:100px;">
       <div style="text-align:center; margin-top:20px;">
-        <a href="https://instagram.com/gusriyonaldi" target="_blank" rel="noopener"
-          style="margin:0 10px; font-size:28px; color:#763325;">
-          <i class="ri-instagram-line"></i> Aldi
+        <a href="https://instagram.com/yuridinata_07" target="_blank" rel="noopener"
+          style="margin:0 10px; font-size:28px; color:#1976d2;">
+          <i class="ri-instagram-line"></i> Yuri
         </a>
-        <a href="https://instagram.com/darmiit" target="_blank" rel="noopener"
-          style="margin:0 10px; font-size:28px; color:#763325;">
-          <i class="ri-instagram-line"></i> Dara
+        <a href="https://instagram.com/pertiwi5706" target="_blank" rel="noopener"
+          style="margin:0 10px; font-size:28px; color:#1976d2;">
+          <i class="ri-instagram-line"></i> Yulia
         </a>
       </div>
       <p style="font-size:13px; color:#777; margin-top: 50px; margin-bottom:10px;">Didukung oleh:</p>
-      <a href="https://www.instagram.com/bytwizaa" target="_blank" rel="noopener">
+      <!-- <a href="https://www.instagram.com/bytwizaa" target="_blank" rel="noopener">
         <img
           src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEib7k2S2GdHDxSVjagSeeMm8lDG6Nw3zGlHymTP9WId42DDILHe7Mq5hGRzzdB6jJCf2CKQEqgMchqWfxUC6Gj_rtgtjEZI72JYN7TG9D5YIkx9xN2sVFOoLPJbfnNqjiCBgWBcutvjOhutf69zEyiRlvaciFAD2Fe5zaNStp_Cg6KnnJXvi8XOzLDDiRpX/s1600/twizaa_Sponsor.png"
           alt="Sponsor" style="height:80px; transition:opacity .3s ease;">
-      </a>
+      </a> -->
     </div>
   </section>
 
