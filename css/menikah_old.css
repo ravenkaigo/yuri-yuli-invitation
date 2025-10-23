@@ -51,16 +51,16 @@ body.noscroll {
 }
 
 .navbar-item.is-active {
-  border-bottom: 2px solid #c8a24d;
+  border-bottom: 2px solid #996E6D;
 }
 
 .a.navbar-item {
-  accent-color: #c8a24d;
+  accent-color: #996E6D;
 }
 
 
 .hero {
-  background-color: #0f3d7a;
+  background-color: #763325;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -134,15 +134,15 @@ body.noscroll {
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li.is-active a {
-  border-bottom: 2px solid #c8a24d;
+  border-bottom: 2px solid #996E6D;
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a {
-  color: #c8a24d;
+  color: #996E6D;
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
-  color: #c8a24d;
+  color: #996E6D;
   transition: all .2s ease-in-out;
   border-bottom: 2px solid #c28285;
 }
@@ -163,12 +163,12 @@ body.noscroll {
 }
 
 .main-content .section-dark {
-  background-color: #0f3d7a;
+  background-color: #763325;
   padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 40px);
 }
 
 .main-content .section-darker {
-  background-color: #0f3d7a;
+  background-color: #763325;
   padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 40px);
 }
 
@@ -189,9 +189,9 @@ body.noscroll {
 }
 
 .main-content .section-dark.resume button {
-  border: 2px solid #c8a24d;
+  border: 2px solid #996E6D;
   background: white;
-  color: #c8a24d;
+  color: #996E6D;
   height: 50px;
   width: 250px;
   font-size: 1rem;
@@ -199,7 +199,7 @@ body.noscroll {
 }
 
 .main-content .section-dark.resume .fa-download {
-  color: #c8a24d;
+  color: #996E6D;
 }
 
 .main-content .section-dark.my-work {
@@ -305,7 +305,7 @@ body.noscroll {
 
 .main-content .section-color.pertanyaan {
   padding: 100px;
-  background-color: #c8a24d;
+  background-color: #996E6D;
   color: white;
 }
 
@@ -322,7 +322,7 @@ body.noscroll {
 .main-content .section-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
-  color: #c8a24d;
+  color: #996E6D;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 0px;
@@ -339,7 +339,7 @@ body.noscroll {
 .ampersand {
   font-size: 5rem;
   font-family: 'Rouge Script', sans-serif;
-  color: #c8a24d;
+  color: #996E6D;
   line-height: 3rem;
   display: inline-block;
   vertical-align: middle;
@@ -382,7 +382,7 @@ body.noscroll {
   line-height: 25px;
   text-align: center;
   vertical-align: middle;
-  background: #0f3d7a;
+  background: #763325;
   color: whitesmoke;
 }
 
@@ -442,7 +442,7 @@ body.noscroll {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #c8a24d;
+  background-color: #996E6D;
   color: white;
   cursor: pointer;
   border-radius: 50%;
@@ -455,7 +455,7 @@ body.noscroll {
 }
 
 #toTop:hover {
-  background-color: #c8a24d;
+  background-color: #BC8887;
 }
 
 ::-webkit-scrollbar {
@@ -464,9 +464,9 @@ body.noscroll {
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px #c8a24d;
-  -webkit-box-shadow: inset 0 0 6px #c8a24d;
-  background-color: #c8a24d;
+  box-shadow: inset 0 0 6px #996E6D;
+  -webkit-box-shadow: inset 0 0 6px #996E6D;
+  background-color: #BC8887;
 }
 
 
@@ -502,7 +502,7 @@ body.noscroll {
 
 .btn-cta:hover {
   color: #141313;
-  background-color: #c8a24d;
+  background-color: #c29165;
   font-size: 1.2rem;
   border-radius: 10px;
   border: 2px solid #5c433e;
@@ -513,7 +513,7 @@ body.noscroll {
 }
 
 .btn-cta {
-  background-color: #c8a24d;
+  background-color: #c29165;
   width: 210px;
   height: 65px;
   color: #5c433e;
@@ -574,7 +574,7 @@ body.noscroll {
 }
 
 .dusty-pink-lighter {
-  color: #0f3d7a
+  color: #763325
 }
 
 .dusty-pink-lightest {
@@ -582,11 +582,11 @@ body.noscroll {
 }
 
 .dusty-pink-darker {
-  color: #c8a24d
+  color: #BC8887
 }
 
 .dusty-pink-darkest {
-  color: #c8a24d
+  color: #996E6D
 }
 
 .tile {
@@ -673,7 +673,7 @@ body.noscroll {
 }
 
 .instagram {
-  color: #c8a24d;
+  color: #996E6D;
   font-size: 1.25rem;
   font-weight: 900;
   margin-top: 0.5rem;
@@ -790,9 +790,9 @@ p {
 
 .audio-toggle {
   position: relative;
-  background: #c8a24d;
-  color: #0f3d7a;
-  border: 2px solid #0f3d7a;
+  background: #d4a373;
+  color: #763325;
+  border: 2px solid #763325;
   font-size: 20px;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -818,11 +818,11 @@ p {
 :root {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: #0f3d7a;
-  --black-color: #0f3d7a;
+  --first-color: hsl(225, 95%, 56%);
+  --black-color: hsl(225, 12%, 12%);
   --white-color: hsl(0, 0%, 100%);
   --text-color: hsl(225, 8%, 65%);
-  --body-color: #f7fafc;
+  --body-color: hsl(225, 100%, 99%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -1099,7 +1099,7 @@ a {
 }
 
 .form-label-ux i {
-  color: #c8a24d;
+  color: #996E6D;
 }
 
 .form-label-ux .req {
@@ -1134,7 +1134,7 @@ a {
 
 #ucapan-form input:focus,
 #ucapan-form textarea:focus {
-  border-color: #c8a24d;
+  border-color: #996E6D;
   box-shadow: 0 0 0 2px rgba(153, 110, 109, .18);
 }
 
@@ -1172,9 +1172,9 @@ a {
 }
 
 .pill--ghost {
-  background: #c8a24d;
+  background: #996E6D;
   color: #fff;
-  border-color: #c8a24d;
+  border-color: #996E6D;
 }
 
 .pill--ghost:hover {
@@ -1246,7 +1246,7 @@ a {
 
 /* ===== Submit button (tap target ≥44px) ===== */
 .btn-submit {
-  background: #c8a24d;
+  background: #996E6D;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -1284,7 +1284,7 @@ a {
 }
 
 .section-dark .pill--ghost {
-  background: #c8a24d;
+  background: #996E6D;
   color: #fff;
 }
 
@@ -1323,7 +1323,7 @@ a {
 }
 
 .section-dark .ucapan-item {
-  background: #0f3d7a;
+  background: #763325;
   /* kartu gelap */
   border-color: rgba(255, 255, 255, .12);
   box-shadow: 0 2px 12px rgba(0, 0, 0, .30);
@@ -1331,7 +1331,7 @@ a {
 
 /* teks default di kartu (light) */
 .ucapan-item b {
-  color: #c8a24d;
+  color: #996E6D;
 }
 
 .ucapan-item p {
@@ -1504,7 +1504,7 @@ a {
   z-index: 10;
   /* Lebih tinggi dari navbar dan konten */
   font-size: 1.8rem;
-  color: #c8a24d;
+  color: #996E6D;
   background: none;
   border: none;
   cursor: pointer;
@@ -1622,7 +1622,7 @@ a {
   border: 0;
   padding: 0;
   font-weight: 700;
-  color: #c8a24d;
+  color: #996E6D;
   cursor: pointer;
 }
 
