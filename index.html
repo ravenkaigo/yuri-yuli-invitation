@@ -282,13 +282,13 @@
 
 
     .preloader {
-      background: url("image/backgroundcatair.webp") repeat-x;
+      /* background: url("image/backgroundcatair.webp") repeat-x; */
       max-width: 400px;
       height: calc(100% - 40px);
       /* Kurangi tinggi untuk menyisakan "wrapper" bawah */
       margin-bottom: 10px;
       /* Memberi ruang di bawah (wrapper terlihat) */
-      background-color: #f2f7ff;
+      background-color: #fdffff;
       /* border-radius: 15px; */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       position: relative;
@@ -312,6 +312,7 @@
       background:
         url("image/Borderyuri.webp") repeat-x top center,
         url("image/borderbawahyri.webp") repeat-x bottom center;
+      
 
       /* ✅ Dua nilai: [atas], [bawah] */
       background-size:
@@ -339,6 +340,7 @@
       /* cuma layer 1 membesar */
       100% {
         background-size: 400px auto, 400px auto;
+        
       }
     }
 
@@ -491,16 +493,16 @@
           </li>
 
           <li>
-            <a href="#Waktu" class="nav__expand-link">
-              <i class="ri-calendar-line"></i>
-              <span>Tanggal</span>
+            <a href="#WaktuAkad" class="nav__expand-link">
+              <i class="ri-service-line"></i>
+              <span>Akad</span>
             </a>
           </li>
 
           <li>
-            <a href="#lokasi" class="nav__expand-link">
-              <i class="ri-send-plane-line"></i>
-              <span>Lokasi</span>
+            <a href="#Waktu" class="nav__expand-link">
+              <i class="ri-calendar-event-line"></i>
+              <span>Resepsi</span>
             </a>
           </li>
 
@@ -634,16 +636,16 @@
       <span class="space40px"></span>
       <span class="space40px"></span>
       <div data-aos="fade-up" data-aos-easing="easing">
-        <img src="image/yuri.png" class="pengantin-pp" alt="yuri">
+        <!-- <img src="image/yuri.png" class="pengantin-pp" alt="yuri"> -->
         <div class="nama-lengkap"> Yuri Pari Dinata </div>
         <p><b>Putra dari:</b><br>
-        Bpk. Syafarudin & Ibu Yufatni</p>
+          Bpk. Syafarudin & Ibu Yufatni</p>
         <div class="ampersand">&</div>
-        <img src="image/yulia.png" class="pengantin-pp" alt="yulia">
+        <!-- <img src="image/yulia.png" class="pengantin-pp" alt="yulia"> -->
         <div class="nama-lengkap"> Yulia Pertiwi </div>
         <p><b>Putri dari:</b><br>
           Bpk. Khairul Koto(Alm) & <br>Ibu
-Suharti (Almh)</p>
+          Suharti (Almh)</p>
 
       </div>
       <span class="space40px"></span>
@@ -653,13 +655,86 @@ Suharti (Almh)</p>
 
     </section>
     <!-- End regular-section-->
+
+    <section class="section-light" id="WaktuAkad">
+      <div class="container">
+
+        <!-- Judul Waktu -->
+        <div class="column is-12 has-text-centered regular-section" data-aos="fade-up" data-aos-easing="linear">
+          <h1 class="title section-title">Akad Nikah</h1>
+        </div>
+
+        <!-- Bagian Tanggal -->
+        <div class="columns is-multiline is-centered" data-aos="fade-up" data-aos-easing="linear">
+          <div class="column is-12 has-text-centered">
+            <div class="waktu tanggal-hari">Jumat</div>
+            <div class="waktu tanggal-angka">28</div>
+            <div class="waktu tanggal-bulan">November 2025</div>
+          </div>
+          <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0;">
+          <!-- Akad -->
+          <div class="column is-4-tablet is-3-desktop has-text-centered">
+            <p class="waktu-label">Waktu Akad</p>
+            <p class="waktu-jam"><strong>09:00 WIB</strong></p>
+          </div>
+
+
+        </div>
+
+        <!-- Tombol Kalender -->
+        <div class="has-text-centered" data-aos="fade-up" data-aos-easing="linear">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Dara+dan+Aldi&dates=20250824T020000Z/20250824T090000Z&details=Acara+Pernikahan+Dara+dan+Aldi+di+Perawang&location=Jl.Raya+Km.5+Perawang+(di+Seberang+Hotel+Highland)"
+            class="button btn-cta" target="_blank" data-aos="zoom-in">
+            <i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;Save to Calendar
+          </a>
+        </div>
+
+      </div>
+
+
+
+    </section>
+    <!-- End Waktu Content -->
+
+
+    <!-- Begin Lokasi Section -->
+    <section class="hero section-darker" id="lokasiakad">
+      <div class="container">
+        <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="easing">
+          <h1 class="title has-text-centered section-title">Lokasi Akad</h1>
+          <p class="tempat is-larger has-text-centered">
+            <b>Rumah Mempelai Pria — Jl. Sederhana (sebelah Cafe Nowwa)</b>
+            <br> (di Seberang Hotel Highland) <br> Perawang, Riau <br>
+          </p>
+
+          <div class="section-map" data-aos="fade-up" data-aos-easing="easing">
+            <div style="border:2px solid #ccc;border-radius:12px;overflow:hidden">
+              <iframe src="https://www.google.com/maps?q=Jl.+Sederhana+sebelah+Cafe+Nowwa&output=embed" width="100%"
+                height="320" style="border:0;" allowfullscreen loading="lazy">
+              </iframe>
+            </div>
+
+
+          </div>
+          <div class="space40px"></div>
+          <div class="has-text-centered" data-aos="fade-up" data-aos-easing="easing">
+            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Sederhana+sebelah+Cafe+Nowwa"
+              class="button btn-cta" target="_blank" data-aos="zoom-in">
+              <i class="fas fa-directions"></i> &nbsp;&nbsp;Lihat Maps </a>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
     <!-- Begin Waktu Section -->
     <section class="section-light" id="Waktu">
       <div class="container">
 
         <!-- Judul Waktu -->
         <div class="column is-12 has-text-centered regular-section" data-aos="fade-up" data-aos-easing="linear">
-          <h1 class="title section-title">Save The Date!</h1>
+          <h1 class="title section-title">Resepsi</h1>
         </div>
 
         <!-- Bagian Tanggal -->
@@ -703,7 +778,7 @@ Suharti (Almh)</p>
     <section class="hero section-darker" id="lokasi">
       <div class="container">
         <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="easing">
-          <h1 class="title has-text-centered section-title">Lokasi Acara</h1>
+          <h1 class="title has-text-centered section-title">Lokasi Resepsi</h1>
           <p class="tempat is-larger has-text-centered">
             <b>Rumah Mempelai Pria — Jl. Sederhana (sebelah Cafe Nowwa)</b>
             <br> (di Seberang Hotel Highland) <br> Perawang, Riau <br>
@@ -743,9 +818,9 @@ Suharti (Almh)</p>
         <div class="column is-12 prologaos-init aos-animate">
           <div class="slider.wrapper">
             <div class="slider">
-              <img src="image/moment.jpg" alt="futu" loading="lazy">
-              <img src="image/moment2.jpg" alt="futu 2" loading="lazy">
-              <img src="image/moment3.jpg" alt="futu 3" loading="lazy">
+              <img src="image/IMG_5315.webp" alt="futu" loading="lazy">
+              <img src="image/IMG_5314.webp" alt="futu 2" loading="lazy">
+              <!-- <img src="image/moment3.jpg" alt="futu 3" loading="lazy"> -->
             </div>
           </div>
           <br><br>
@@ -764,7 +839,7 @@ Suharti (Almh)</p>
   margin: 0 auto;
   letter-spacing: 0.3px;
     ">
-    <br><br>
+            <br><br>
             Kita dipertemukan bukan untuk sekadar berjalan berdampingan, tapi untuk saling menjadi rumah di setiap
             perjalanan
             <br><br>
@@ -772,7 +847,7 @@ Suharti (Almh)</p>
           </p>
         </div>
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="image/flapping_bird.webp" style="width: 297px; height: 222px;" alt="Animasi WebP" loading="lazy" />
+          <img src="image/IMG_5317.webp" style="width: 297px; height: auto;" alt="Animasi WebP" loading="lazy" />
         </div>
 
 
