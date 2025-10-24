@@ -33,15 +33,105 @@ function decodeHtmlEntities(str) {
 const daftarTamu = {
 
   "mutual-ig": "Instagram Mutuals",
-  //tambah tamu disini
+
+  // daftar tamu
+  "reza": "Reza Juanda Dan Istri",
+  "akhrum": "Akhrum Dan Partner",
+  "fahri": "Fahri Dan Partner",
+  "ryan": "Ryan Dan Istri",
+  "zul": "Zul Ari Dan Partner",
+  "irham": "Irham Dan Partner",
+  "haris": "Haris Dan Partner",
+  "bayu": "Bayu Dan Partner",
+  "deo": "Deo Dan Partner",
+  "muklis": "Muklis Rambe Dan Istri",
+  "manan": "Manan Sitompul Dan Partner",
+  "siti": "Siti Dan Sandi",
+  "firda": "Firda Dan Suami",
+  "febry": "Febry Dan Partner",
+  "heru": "Heru Dan Partner",
+  "imam": "Imam Dan Partner",
+  "alfandi": "Alfandi Dan Partner",
+  "buknur": "Buk Nur Alhidayatillah Dan Suami",
+  "pakkhair": "Pak Khairuddin Dan Istri",
+  "catur": "Catur Dan Partner",
+  "delvia": "Delvia Dan Suami",
+  "helmalia": "Helmalia Dan Partner",
+  "hulya": "Hulya Dan Istri",
+  "hilda": "Hilda Dan Partner",
+  "rika": "Rika Dan Suami",
+  "meidina": "Meidina Dan Suami",
+  "devi": "Devi H Dan Suami",
+  "regina": "Regina Dan Partner",
+  "shella": "Shella Dan Partner",
+  "dian": "Dian Permata Dan Suami",
+  "kris": "Kris Dan Partner",
+  "umma": "Umma Dan Partner",
+  "helma": "Helma Winda Dan Partner",
+  "agus": "Agus Dan Istri",
+  "rido": "Rido Dan Partner",
+  "suci": "Suci Muhairani Dan Suami",
+  "rahman": "Rahman Dan Partner",
+  "armel": "Armelia Dan Suami",
+  "gilang": "Gilang Dan Partner",
+  "nana": "Nana & Partner",
+  "anwar": "Anwar Dan Istri",
+  "zikri": "Zikri Dan Partner",
+  "khairul": "Khairul Dan Istri",
+  "yusril": "Yusril Dan Partner",
+  "ferdi": "Ferdian Dan Istri",
+  "nora": "Nora Dan Partner",
+  "denafa": "Denafa Dan Suami",
+  "dimas": "Dimas Dan Partner",
+  "ilham": "Ilham S Dan Istri",
+  "irvan": "Irvan S Dan Partner",
+  "zailani": "Zailani Dan Istri",
+  "peri": "Peri Dan Istri",
+  "mikdel": "Mikdel Dan Istri",
+  "nasrial": "Nasrial Dan Istri",
+  "masrial": "Masrial Dan Istri",
+  "fajar": "Fajar Purnomo Dan Istri",
+  "rudi": "Rudi Hardika Dan Istri",
+  "suryadi": "Suryadi Dan Istri",
+  "tetty": "Tetty Dan Suami",
+  "yunus": "Yunus Dan Istri",
+  "willy": "Willy Nov Dan Istri",
+  "imel": "Imellyanti Dan Partner",
+  "zikri2": "Zikri Dan Partner"
 };
 
-const param = new URLSearchParams(location.search).get("to");
-const namaDefault = "Tamu Undangan"; // nama default
-const nama = daftarTamu[param] || namaDefault;
+
+// --- Ambil slug / nama dari URL (punya fallback)
+const url = new URL(location.href);
+const param = url.searchParams.get("to");
+const namaDefault = "Tamu Undangan";
+
+function toTitleCase(str) {
+  return str.replace(/\S+/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+}
+function deslugify(raw = "") {
+  let s = decodeURIComponent(raw || "").replace(/\+/g, " ");
+  if (s.startsWith("b64:")) {
+    try { s = atob(s.slice(4)); } catch (_) { }
+  }
+  s = s.replace(/[-_]+/g, " ").replace(/\s{2,}/g, " ").trim();
+  s = toTitleCase(s);
+  s = s.replace(/\b(Dan|&|Yang|Di|Ke|Dari)\b/gi, m => m.toLowerCase());
+  return s || namaDefault;
+}
+
+let nama;
+if (param && Object.prototype.hasOwnProperty.call(daftarTamu, param)) {
+  nama = daftarTamu[param] || namaDefault;      // prioritas mapping
+} else if (param) {
+  nama = deslugify(param);                      // slug manual / raw / base64
+} else {
+  nama = namaDefault;
+}
 
 document.getElementById("guest-name").textContent = nama;
 document.getElementById("guest-nama").textContent = nama;
+
 
 // ===============Ucapan==========
 
