@@ -46,7 +46,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/menikah.css?v=2025-08-25-01_Newest" />
+  <link rel="stylesheet" type="text/css" href="css/menikah.css?v=2025-08-25-01_Newbgt" />
   <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css" />
   <!-- Font Awesome 6 CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -130,28 +130,35 @@
     }
 
 
-    /* SVG distort border */
+    /* Distort border: biru–gold, gelombang mewah (bold) */
     .distort-border {
       position: fixed;
       top: 0;
       bottom: 0;
-      width: 30px;
-      background-image: url("data:image/svg+xml;utf8,<svg width='30' height='1000' xmlns='http://www.w3.org/2000/svg'><defs><filter id='warp'><feTurbulence type='fractalNoise' baseFrequency='0.01' numOctaves='3' seed='7' result='warpNoise'><animate attributeName='baseFrequency' values='0.01;0.015;0.01' dur='8s' repeatCount='indefinite'/></feTurbulence><feDisplacementMap in='SourceGraphic' in2='warpNoise' scale='20' xChannelSelector='R' yChannelSelector='G'/></filter><linearGradient id='grad' gradientTransform='rotate(90)'><stop offset='0%' stop-color='rgba(255,140,0,0)'/><stop offset='40%' stop-color='rgba(255,200,100,0.45)'/><stop offset='60%' stop-color='rgba(255,200,100,0.45)'/><stop offset='100%' stop-color='rgba(255,140,0,0)'/></linearGradient></defs><rect width='100%' height='1000' fill='url(%23grad)' filter='url(%23warp)'/></svg>");
+      width: 40px;
+      pointer-events: none;
+      z-index: 980;
+      opacity: .4;
       background-repeat: repeat-y;
       background-size: cover;
       background-position: 0 0;
-      z-index: 1;
-      opacity: 0.3;
       animation: scrollBackground 8s ease-in-out infinite;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='1000'><defs><filter id='warp'><feTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='9' result='warpNoise'><animate attributeName='baseFrequency' values='0.012;0.018;0.012' dur='8s' repeatCount='indefinite'/></feTurbulence><feDisplacementMap in='SourceGraphic' in2='warpNoise' scale='20' xChannelSelector='R' yChannelSelector='G'/></filter><linearGradient id='grad' gradientTransform='rotate(90)'><stop offset='0%' stop-color='rgba(0,60,255,0)'/><stop offset='30%' stop-color='rgba(0,80,200,0.45)'/><stop offset='50%' stop-color='rgba(255,215,0,0.5)'/><stop offset='70%' stop-color='rgba(0,80,200,0.45)'/><stop offset='100%' stop-color='rgba(0,60,255,0)'/></linearGradient></defs><path d='M0,0 C12,120 34,200 24,300 C12,410 34,510 22,630 C12,740 34,840 24,1000 L40,1000 L40,0 Z' fill='url(%23grad)' filter='url(%23warp)'/></svg>");
     }
 
     .distort-border.left {
       left: 0;
+      transform: scaleX(-1) translateX(-100%);
+      transform-origin: left center;
     }
 
     .distort-border.right {
       right: 0;
+      transform: none;
+      /* biarin default */
     }
+
+
 
     @keyframes scrollBackground {
       0% {
@@ -162,6 +169,8 @@
         background-position: 0 1000px;
       }
     }
+
+
 
     .hero-blank {
 
@@ -468,8 +477,8 @@
   <a role="button" id="audio-control" class="nav__expand-link ri-volume-up-line" title="Mute / Unmute">
   </a>
   <!-- Begin Header -->
-  <div class="distort-border left" data-aos="zoom-in"></div>
-  <div class="distort-border right" data-aos="zoom-in"></div>
+  <div class="distort-border left"></div>
+  <div class="distort-border right" ></div>
   <div class="header-wrapper">
 
     <!-- Begin Hero -->
@@ -840,7 +849,8 @@
 
             Kita dipertemukan bukan untuk sekadar berjalan berdampingan, tapi untuk saling menjadi rumah di setiap
             perjalanan
-            <br><br></p>
+            <br><br>
+          </p>
           <video controls autoplay muted loop playsinline class="my-video" data-aos="fade-up"
             data-aos-anchor-placement="top-center" data-aos-easing="ease-in-back" data-aos-delay="50"
             data-aos-offset="0">
@@ -851,8 +861,9 @@
 
         </div>
         <div style="display: flex; justify-content: center; align-items: center;" class="aos-init aos-animate">
-          <img src="image/IMG_5317.webp" style="width: 297px; height: auto;" alt="Animasi WebP" loading="lazy" data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-easing="ease-in-back"
-        data-aos-delay="100" data-aos-offset="0" />
+          <img src="image/IMG_5317.webp" style="width: 297px; height: auto;" alt="Animasi WebP" loading="lazy"
+            data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-easing="ease-in-back"
+            data-aos-delay="100" data-aos-offset="0" />
         </div>
 
 
