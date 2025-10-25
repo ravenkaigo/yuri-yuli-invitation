@@ -1582,14 +1582,14 @@ a {
 
 /* Card style untuk tab content */
 .tab-pane .box {
-  border-radius: 0 0 6px 6px;
+  border-radius: 7px;
   /* nyambung sama tab header */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: -2px 1em 2em 0em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
   padding: 1.5rem;
 }
 
 .tab-pane {
-  background: #7f5b5a;
+
   border-radius: 0 0 6px 6px;
 }
 
@@ -1606,7 +1606,7 @@ a {
   color: #ffffff;
   font-weight: bold;
   /* warna teks aktif */
-  background-color: #7f5b5a;
+  background-color: #0f3d7a;
   /* putih untuk panel aktif */
   border-color: #ddd;
 }
